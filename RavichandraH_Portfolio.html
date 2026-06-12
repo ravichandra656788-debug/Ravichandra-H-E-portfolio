@@ -1,0 +1,169 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ravichandra H - Advanced Portfolio</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:Poppins,sans-serif}
+body{background:#07111f;color:white;overflow-x:hidden}
+#particles{position:fixed;inset:0;z-index:-1}
+nav{position:sticky;top:0;padding:20px 8%;display:flex;justify-content:space-between;background:rgba(255,255,255,.05);backdrop-filter:blur(15px)}
+section{padding:90px 8%}
+.glass{background:rgba(255,255,255,.08);backdrop-filter:blur(18px);border:1px solid rgba(255,255,255,.15);border-radius:25px;padding:30px;box-shadow:0 8px 35px rgba(0,0,0,.35)}
+.hero{min-height:100vh;display:flex;align-items:center;justify-content:center;text-align:center}
+.hero h1{font-size:4.5rem}
+.type{color:#7df9ff}
+.grid{display:grid;gap:25px}
+.skills,.projects,.contact{grid-template-columns:repeat(auto-fit,minmax(250px,1fr))}
+.card{transition:.3s}
+.card:hover{transform:translateY(-10px) scale(1.02)}
+h2{font-size:2.5rem;margin-bottom:25px}
+.timeline{border-left:3px solid #7df9ff;padding-left:25px}
+.timeline div{margin-bottom:25px}
+.counter-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:20px}
+.counter{text-align:center}
+.num{font-size:3rem;color:#7df9ff;font-weight:700}
+footer{text-align:center;padding:40px}
+</style>
+</head>
+<body>
+<canvas id="particles"></canvas>
+
+<nav>
+<h2>Ravichandra H</h2>
+<div>AI & ML Portfolio</div>
+</nav>
+
+<section class="hero">
+<div class="glass">
+<h1>Ravichandra H</h1>
+<h3 class="type" id="type"></h3>
+<br>
+<p>Artificial Intelligence & Machine Learning Student | REVA University</p>
+</div>
+</section>
+
+<section>
+<h2>About Me</h2>
+<div class="glass">
+<p>
+I am Ravichandra H, a first-year Artificial Intelligence and Machine Learning student at REVA University. I am passionate about emerging technologies, software development, and solving real-world problems through innovation. My academic journey has helped me build a strong foundation in programming, artificial intelligence tools, and data science fundamentals. I enjoy exploring new technologies and continuously improving my technical and analytical skills.
+<br><br>
+Apart from AI and software development, I am also interested in Internet of Things (IoT) applications and entrepreneurship concepts. I believe technology and innovation together can create impactful solutions that improve everyday life. My goal is to become a skilled AI professional capable of developing intelligent systems while contributing to meaningful technological advancements.
+</p>
+</div>
+</section>
+
+<section>
+<h2>Technical Skills</h2>
+<div class="grid skills">
+<div class="glass card"><h3>C Programming</h3><p>Problem solving and graphics programming.</p></div>
+<div class="glass card"><h3>Python</h3><p>Application development and automation.</p></div>
+<div class="glass card"><h3>AI/ML Tools</h3><p>Learning machine learning workflows and tools.</p></div>
+<div class="glass card"><h3>Data Science</h3><p>Data analysis and visualization basics.</p></div>
+<div class="glass card"><h3>IoT Concepts</h3><p>Sensor integration and monitoring systems.</p></div>
+<div class="glass card"><h3>Entrepreneurship Basics</h3><p>Innovation, idea validation, and business thinking.</p></div>
+</div>
+</section>
+
+<section>
+<h2>Academic Projects</h2>
+<div class="grid projects">
+<div class="glass card">
+<h3>Smart Expense Tracker</h3>
+<p>Python-based application for recording expenses, analyzing spending habits, and generating summaries for better financial management.</p>
+</div>
+
+<div class="glass card">
+<h3>2D Graphics Design Using C</h3>
+<p>Interactive graphics editor demonstrating drawing operations, canvas management, and graphical rendering concepts using C.</p>
+</div>
+
+<div class="glass card">
+<h3>Weather Monitoring System</h3>
+<p>IoT-based weather monitoring solution that collects environmental data from sensors and displays useful information in real time.</p>
+</div>
+</div>
+</section>
+
+<section>
+<h2>Education Journey</h2>
+<div class="glass timeline">
+<div>
+<h3>REVA University</h3>
+<p>B.Tech in Artificial Intelligence & Machine Learning</p>
+<p>1st Year | 2nd Semester</p>
+</div>
+</div>
+</section>
+
+<section>
+<h2>Interests</h2>
+<div class="glass">
+Artificial Intelligence, Machine Learning, Data Science, IoT Systems, Software Development, Entrepreneurship, Innovation, Problem Solving, and Emerging Technologies.
+</div>
+</section>
+
+<section>
+<h2>Achievements & Growth</h2>
+<div class="counter-grid">
+<div class="glass counter"><div class="num" data-t="3">0</div><p>Projects</p></div>
+<div class="glass counter"><div class="num" data-t="6">0</div><p>Skills</p></div>
+<div class="glass counter"><div class="num" data-t="10">0</div><p>Technologies</p></div>
+<div class="glass counter"><div class="num" data-t="1">0</div><p>University</p></div>
+</div>
+</section>
+
+<section>
+<h2>Contact</h2>
+<div class="grid contact">
+<div class="glass card">Email</div>
+<div class="glass card">Phone Number</div>
+<div class="glass card">GitHub</div>
+<div class="glass card">LinkedIn</div>
+</div>
+</section>
+
+<footer>© 2026 Ravichandra H | REVA University</footer>
+
+<script>
+const canvas=document.getElementById('particles');
+const ctx=canvas.getContext('2d');
+canvas.width=innerWidth;canvas.height=innerHeight;
+let pts=[];
+for(let i=0;i<120;i++)pts.push({x:Math.random()*innerWidth,y:Math.random()*innerHeight,vx:(Math.random()-.5),vy:(Math.random()-.5)});
+function draw(){
+ctx.clearRect(0,0,canvas.width,canvas.height);
+pts.forEach(p=>{
+p.x+=p.vx;p.y+=p.vy;
+if(p.x<0||p.x>innerWidth)p.vx*=-1;
+if(p.y<0||p.y>innerHeight)p.vy*=-1;
+ctx.beginPath();ctx.arc(p.x,p.y,2,0,6.28);ctx.fillStyle="#7df9ff";ctx.fill();
+});
+requestAnimationFrame(draw);
+}
+draw();
+
+const words=["AI & ML Student","Python Developer","IoT Enthusiast","Future Entrepreneur"];
+let i=0,j=0,d=false,e=document.getElementById("type");
+setInterval(()=>{
+let w=words[i];
+e.textContent=w.substring(0,j);
+if(!d){j++;if(j>w.length)d=true;}
+else{j--;if(j==0){d=false;i=(i+1)%words.length;}}
+},120);
+
+document.querySelectorAll('.num').forEach(n=>{
+let t=+n.dataset.t,c=0;
+let k=setInterval(()=>{
+c++;
+n.textContent=c;
+if(c>=t)clearInterval(k);
+},120);
+});
+</script>
+</body>
+</html>
